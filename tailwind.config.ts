@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        afacad: ["Afacad", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        amiri: ["Amiri", "serif"],
+      },
     },
   },
   plugins: [],
