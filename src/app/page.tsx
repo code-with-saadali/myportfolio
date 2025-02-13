@@ -23,10 +23,10 @@ const Home = () => {
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
+      el: document.querySelector("[data-scroll-container]") as HTMLElement,
       smooth: true,
     });
-
+  
     return () => scroll.destroy(); 
   }, []);
 
