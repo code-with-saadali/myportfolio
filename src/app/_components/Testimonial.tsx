@@ -1,13 +1,11 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper as SwiperType } from "swiper/types";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { FadeUp } from "./Animation";
-
 
 interface Project {
   id: number;
@@ -56,16 +54,10 @@ const projects: Project[] = [
 ];
 
 const Testimonial = () => {
-  const [showTitle, setShowTitle] = useState(true);
-
-  const handleSlideChange = (swiper: SwiperType) => { 
+  const handleSlideChange = (swiper: SwiperType) => {
     if (swiper.isEnd) {
-      setShowTitle(false);
       setTimeout(() => {
-        setShowTitle(true);
       }, 1000); 
-    } else {
-      setShowTitle(true);
     }
   };
 
@@ -88,14 +80,47 @@ const Testimonial = () => {
           <SwiperSlide key={project.id}>
             <div className="text">
               <div>
-                <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }} className="font-amiri text-[48px] max-md:text-[30px] text-center">{project.title}</motion.h1>
+                <motion.h1
+                  variants={FadeUp(0.1)}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{
+                    once: false,
+                    amount: "some",
+                    margin: "0px 0px -40px 0px",
+                  }}
+                  className="font-amiri text-[48px] max-md:text-[30px] text-center"
+                >
+                  {project.title}
+                </motion.h1>
               </div>
 
-              <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }} className="text-[24px] font-poppins text-center pt-10 font-medium">
+              <motion.h1
+                variants={FadeUp(0.1)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: false,
+                  amount: "some",
+                  margin: "0px 0px -40px 0px",
+                }}
+                className="text-[24px] font-poppins text-center pt-10 font-medium"
+              >
                 {project.description}
               </motion.h1>
-              <motion.p variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }} className="text-center text-[14px] text-[#666666]">
-                {project.mention} <span className="text-[#0099FF] uppercase">at amazon</span>
+              <motion.p
+                variants={FadeUp(0.1)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: false,
+                  amount: "some",
+                  margin: "0px 0px -40px 0px",
+                }}
+                className="text-center text-[14px] text-[#666666]"
+              >
+                {project.mention}
+                <span className="text-[#0099FF] uppercase">at amazon</span>
               </motion.p>
             </div>
           </SwiperSlide>
