@@ -79,24 +79,26 @@ const Slider: React.FC = () => {
             slidesPerView: 1,
             spaceBetween: 20, // Space between slides on mobile
           },
-          // For md and up (tablet and larger), show 3 slides at a time
+         
           768: {
             slidesPerView: 3,
-            spaceBetween: 30, // Space between slides on larger screens
+            spaceBetween: 30, 
           },
         }}
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
             <motion.div variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }} className="rounded-xl transition-transform transform hover:scale-105 cursor-pointer">
+              <div className="w-full h-full overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
                 width={420}
                 height={280}
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full hover:scale-110 duration-500"
                 priority
               />
+              </div>
             </motion.div>
             <div className="details text-center">
               <motion.h3 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }} className="text-[#999999] text-sm sm:text-base md:text-lg pt-4 sm:pt-6 font-medium font-poppins">

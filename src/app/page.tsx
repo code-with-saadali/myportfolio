@@ -11,6 +11,9 @@ import Footer from "./_components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Contact from "./_components/Contact";
+import Scene from './_components/Scene';
+import Text from './_components/Text';
+
 
 const Home = () => {
   const { scrollYProgress } = useScroll(); 
@@ -39,6 +42,8 @@ const Home = () => {
       <Testimonial />
       <Projects />
       <Contact/>
+      <Text/>
+      <Scene/>
       <Footer />
       <motion.div
         style={{
