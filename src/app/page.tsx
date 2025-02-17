@@ -11,8 +11,7 @@ import Footer from "./_components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Contact from "./_components/Contact";
-import Scene from './_components/Scene';
-import Text from './_components/Text';
+import Scene1 from "./_components/Scene1";
 
 
 const Home = () => {
@@ -36,14 +35,13 @@ const Home = () => {
   return (
     <div data-scroll-container>
       <Navbar />
+       <Scene1/>
       <About />
       <Experience />
       <Slider />
       <Testimonial />
       <Projects />
       <Contact/>
-      <Text/>
-      <Scene/>
       <Footer />
       <motion.div
         style={{

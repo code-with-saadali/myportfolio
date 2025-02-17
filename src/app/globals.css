@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .swiper-pagination-bullet {
   @apply bg-white opacity-100 !important;
 }
