@@ -6,6 +6,7 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import Link from "next/link";
+import Scene1 from "./Scene1";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
   
 
   return (
-    <div className="w-full px-12 py-5 max-lg:px-5">
+    <div className="w-full px-12 h-screen py-5 max-lg:px-5">
       <main>
         <nav>
           <ul className="fixed p-4 rounded-3xl backdrop-blur-md z-50 left-10 right-10 flex max-md:flex-col justify-between items-center">
@@ -129,12 +130,9 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* <div className="text absolute left-0 right-0 bottom-48">
-          <h1 className="font-amiri text-[80px] font-[400] text-center leading-[98px] max-md:text-[42px] max-md:leading-[52px]">
-            Porfo Erdison <br /> UI/UX Interaction Designer <br /> Based in
-            Poland
-          </h1>
-        </div> */}
+        <div className="text absolute left-0 right-0">
+        <Scene1/>
+        </div>
       </main>
     </div>
   );
