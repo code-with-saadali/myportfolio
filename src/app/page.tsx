@@ -41,7 +41,6 @@ const Home = () => {
       <Testimonial />
       <Projects />
       <Contact/>
-      <Footer />
       <motion.div
         style={{
           scaleY,
