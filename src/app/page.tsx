@@ -6,7 +6,6 @@ import Experience from "./_components/Experience";
 import Slider from "./_components/Slider";
 import Testimonial from "./_components/Testimonial";
 import Projects from "./_components/Projects";
-import Footer from "./_components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Contact from "./_components/Contact";
