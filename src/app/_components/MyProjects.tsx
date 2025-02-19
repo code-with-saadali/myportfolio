@@ -63,7 +63,7 @@ const MyProjects = () => {
             <span className="text-white text-xl font-semibold">Project 3</span>
           </div>
         </div>
-      </div>
+      </div>zz
     </motion.div>
   )
 }

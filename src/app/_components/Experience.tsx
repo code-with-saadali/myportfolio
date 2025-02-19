@@ -4,7 +4,7 @@ import { useState } from "react";
 import ExperienceContent from "./ExperienceContent";
 import Location from "./Location";
 import MyProjects from "./MyProjects";
-import Scene3 from "./Scene3";
+
 
 const Experience = () => {
   const [activeContent, setActiveContent] = useState<number>(0);
@@ -16,7 +16,7 @@ const Experience = () => {
   return (
     <div className="px-20 py-10 max-lg:px-10">
       <div className="text">
-        {/* <motion.h1
+        <motion.h1
           initial="hidden"
           whileInView="visible"
           viewport={{
@@ -27,8 +27,8 @@ const Experience = () => {
           className="font-amiri text-[60px] max-md:text-[48px] text-center"
         >
           Education & Experience
-        </motion.h1> */}
-        <Scene3/>
+        </motion.h1>
+       
       </div>
 
       {/* Buttons Section */}

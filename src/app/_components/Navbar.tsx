@@ -6,7 +6,6 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import Link from "next/link";
-import Scene1 from "./Scene1";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +15,10 @@ const Navbar = () => {
   };
 
   const navLinks = ["HOME", "BOOK ME", "EMAIL", "DOWNLOAD NOW"];
-  const navlogo = ["SAAD ALI"];
-  
+
 
   return (
-    <div className="w-full px-12 h-screen py-5 max-lg:px-5">
+    <div className="w-full px-12 py-5 max-lg:px-5">
       <main>
         <nav>
           <ul className="fixed p-4 rounded-3xl backdrop-blur-md z-50 left-10 right-10 flex max-md:flex-col justify-between items-center">
@@ -30,7 +28,7 @@ const Navbar = () => {
                   key={index}
                   href="#"
                   className="text-[15px] max-md:text-[13px] font-[600] font-poppins"
-                  whileHover={{ scale: 1.1, }}
+                  whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 500 }}
                 >
                   <div className="flex max-md:hidden">
@@ -54,31 +52,14 @@ const Navbar = () => {
               ))}
             </li>
             <div className="logo absolute left-[45%] max-md:relative max-md:left-0">
-            {navlogo.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  className="text-4xl font-[700] font-amiri"
-                  whileHover={{ scale: 1.1, }}
-                  transition={{ type: "spring", stiffness: 500 }}
-                >
-                    {link.split("").map((letter, i) => (
-                      <motion.span
-                        key={i}
-                        initial={{ y: 0 }}
-                        whileHover={{ y: "-100%" }}
-                        transition={{
-                          duration: 0.15,
-                          ease: "easeInOut",
-                          delay: 0.02 * i,
-                        }}
-                        className="inline-block"
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
-                </motion.a>
-              ))}
+              <div className="logoname">
+                <button className="button" data-text="Awesome">
+                  <span className="actual-text">&nbsp;Saadali&nbsp;</span>
+                  <span aria-hidden="true" className="hover-text">
+                    &nbsp;saadali&nbsp;
+                  </span>
+                </button>
+              </div>
             </div>
             <div className="flex items-center gap-5 text-[40px] max-lg:mt-5">
               {[IoLogoTwitter, RiLinkedinBoxFill, IoLogoInstagram].map(
@@ -118,21 +99,23 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link className="uppercase" href="/">BookMe</Link>
+                <Link className="uppercase" href="/">
+                  BookMe
+                </Link>
               </li>
               <li>
-              <Link className="uppercase" href="/">email</Link>
+                <Link className="uppercase" href="/">
+                  email
+                </Link>
               </li>
               <li>
-              <Link className="uppercase" href="/">downloadnow</Link>
+                <Link className="uppercase" href="/">
+                  downloadnow
+                </Link>
               </li>
             </ul>
           </div>
         )}
-
-        <div className="text absolute left-0 right-0">
-        <Scene1/>
-        </div>
       </main>
     </div>
   );

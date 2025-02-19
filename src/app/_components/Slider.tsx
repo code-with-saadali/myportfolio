@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import { FadeUp } from "./Animation";
-import Scene4 from "./Scene4";
+
 
 interface Project {
   id: number;
@@ -59,7 +59,7 @@ const Slider: React.FC = () => {
     <div className="px-6 sm:px-12 lg:px-20 py-10">
       <div className="text">
         <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }}  className="text-4xl sm:text-5xl lg:text-6xl font-amiri text-center pb-10 sm:pb-16 lg:pb-28">
-          <Scene4/>
+          My Latest Projects
         </motion.h1>
       </div>
       <Swiper

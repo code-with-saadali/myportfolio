@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from "react";
 import { useScroll, useSpring,motion } from "framer-motion"; 
-import Navbar from "./_components/Navbar";
 import About from "./_components/About";
 import Experience from "./_components/Experience";
 import Slider from "./_components/Slider";
@@ -11,6 +10,8 @@ import Footer from "./_components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Contact from "./_components/Contact";
+import Hero from "./_components/Hero";
+
 
 
 const Home = () => {
@@ -33,7 +34,7 @@ const Home = () => {
 
   return (
     <div data-scroll-container>
-      <Navbar />
+     <Hero/>
       <About />
       <Experience />
       <Slider />
