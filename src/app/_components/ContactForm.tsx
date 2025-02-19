@@ -29,7 +29,7 @@ const ContactForm = () => {
       if (res.ok) {
         setFormData({ name: '', email: '', message: '' });
       }
-    } catch (error) {
+    } catch {
       setIsLoading(false);
       setStatus('Something went wrong. Please try again.');
     }
