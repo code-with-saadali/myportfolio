@@ -3,7 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ body html {
+  background-color: black
+ }
 .swiper-pagination-bullet {
   @apply bg-white opacity-100 !important;
 }
@@ -31,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -45,8 +47,8 @@ body {
 
 .button {
   --border-right: 0.5px;
-  --text-stroke-color: rgba(0, 0, 0, 0.6);
-  --animation-color: #212222;
+  --text-stroke-color: rgb(255, 255, 255);
+  --animation-color: #111111;
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
@@ -103,4 +105,48 @@ body {
 .cards:hover > .card:not(:hover) {
   filter: blur(10px);
   transform: scale(0.9, 0.9);
+}
+.bg {
+  @apply bg-gradient-to-r bg-white from-[rgb(0,0,0)] to-[rgba(0,0,0,0.91)];
+}
+.dot {
+  height: 6px;
+  width: 6px;
+  margin-right: 10px;
+  border-radius: 50px;
+  border: #5f5f5f;
+  background-color: #31EE33;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.2);
+    background-color: rgb(96, 233, 98);
+    box-shadow: 0 0 0 0 rgba(94, 190, 102, 0.7);
+  }
+
+  50% {
+    transform: scale(1.4);
+    background-color: #31EE33;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(1.2);
+    background-color: #60e962;
+    box-shadow: 0 0 0 0 rgba(94, 190, 102, 0.7);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
 }

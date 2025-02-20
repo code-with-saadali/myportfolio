@@ -1,124 +1,84 @@
-"use client";
-import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
-import { RiLinkedinBoxFill } from "react-icons/ri";
-import { motion } from "framer-motion";
-import { FiMenu } from "react-icons/fi";
-import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+'use client';
 import Link from "next/link";
+import { useState } from "react";
+import { RiTwitterFill, RiLinkedinBoxFill, RiInstagramLine, RiMenu3Fill, RiCloseFill } from "react-icons/ri";
+import { motion } from 'framer-motion';
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState);
-  };
-
-  const navLinks = ["HOME", "BOOK ME", "EMAIL", "DOWNLOAD NOW"];
-
+  const links = [
+    { link: "Home", url: "/home" },
+    { link: "About", url: "/about" },
+    { link: "Services", url: "/services" },
+    { link: "Faqs", url: "/faqs" },
+    { link: "Contact me", url: "/contact" },
+  ];
 
   return (
-    <div className="w-full px-12 py-5 max-lg:px-5">
-      <main>
-        <nav>
-          <ul className="fixed p-4 rounded-3xl backdrop-blur-md z-50 left-10 right-10 flex max-md:flex-col justify-between items-center">
-            <li className="flex items-center gap-16 max-xl:gap-5 max-md:gap-0">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  className="text-[15px] max-md:text-[13px] font-[600] font-poppins"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 500 }}
-                >
-                  <div className="flex max-md:hidden">
-                    {link.split("").map((letter, i) => (
-                      <motion.span
-                        key={i}
-                        initial={{ y: 0 }}
-                        whileHover={{ y: "-100%" }}
-                        transition={{
-                          duration: 0.15,
-                          ease: "easeInOut",
-                          delay: 0.02 * i,
-                        }}
-                        className="inline-block"
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.a>
-              ))}
-            </li>
-            <div className="logo absolute left-[45%] max-md:relative max-md:left-0">
-              <div className="logoname">
-                <button className="button" data-text="Awesome">
-                  <span className="actual-text">&nbsp;Saadali&nbsp;</span>
-                  <span aria-hidden="true" className="hover-text">
-                    &nbsp;saadali&nbsp;
-                  </span>
-                </button>
-              </div>
+    <header className="bg-black fixed font-sans w-full top-0 left-0 z-[100]">
+      <nav className="mx-auto px-20 max-lg:px-4 py-4">
+        <div className="flex justify-between items-center">
+          <div className="logo">
+            <div className="logoname">
+              <button className="button" data-text="Awesome">
+                <span className="actual-text">&nbsp;Saadali&nbsp;</span>
+                <span aria-hidden="true" className="hover-text">
+                  &nbsp;saadali&nbsp;
+                </span>
+              </button>
             </div>
-            <div className="flex items-center gap-5 text-[40px] max-lg:mt-5">
-              {[IoLogoTwitter, RiLinkedinBoxFill, IoLogoInstagram].map(
-                (Icon, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Icon className="border rounded-full p-2 hover:bg-black hover:text-white cursor-pointer duration-100" />
-                  </motion.div>
-                )
-              )}
-              <motion.div
-                onClick={toggleMenu}
-                className="cursor-pointer hidden max-md:flex"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {isMenuOpen ? (
-                  <AiOutlineClose className="text-4xl text-white bg-black p-2 rounded-full max-md:text-3xl" />
-                ) : (
-                  <FiMenu className="text-4xl text-white bg-black p-2 rounded-full max-md:text-3xl" />
-                )}
-              </motion.div>
-            </div>
-          </ul>
-        </nav>
-
-        {/* This div is shown when menu is open on mobile */}
-        {isMenuOpen && (
-          <div className="items-center mt-40 gap-4 max-md:block bg-[#000000]/85 backdrop-blur-3xl fixed z-50 left-5 right-5 h-52">
-            <ul className="text-white text-2xl justify-items-center font-amiri font-[600]">
-              <li>
-                <Link className="uppercase" href="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="uppercase" href="/">
-                  BookMe
-                </Link>
-              </li>
-              <li>
-                <Link className="uppercase" href="/">
-                  email
-                </Link>
-              </li>
-              <li>
-                <Link className="uppercase" href="/">
-                  downloadnow
-                </Link>
-              </li>
-            </ul>
           </div>
-        )}
-      </main>
-    </div>
-  );
-};
 
-export default Navbar;
+          <div className="hidden md:flex space-x-6 text-white">
+            {links.map((l, i) => (
+              <Link key={i} href={l.url} className="cursor-pointer text-white font-amiri uppercase group">
+                <div className="relative overflow-hidden">
+                  <p className="group-hover:-translate-y-7 text-lg duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+                    {l.link}
+                  </p>
+                  <p className="absolute top-7 text-lg left-0 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+                    {l.link}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="md:hidden">
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white focus:outline-none border rounded-full p-2">
+              {isMobileMenuOpen ? (
+                <RiCloseFill className="text-xl" />
+              ) : (
+                <RiMenu3Fill className="text-xl" />
+              )}
+            </button>
+          </div>
+
+          <div className="icons flex items-center gap-3 max-md:hidden">
+            <RiTwitterFill className="text-white text-[40px] p-2 border rounded-full hover:bg-white hover:text-black hover:border-2 hover:border-black cursor-pointer duration-100"/>
+            <RiLinkedinBoxFill className="text-white text-[40px] p-2 border rounded-full hover:bg-white hover:text-black hover:border-2 hover:border-black cursor-pointer duration-100"/>
+            <RiInstagramLine className="text-white text-[40px] p-2 border rounded-full hover:bg-white hover:text-black hover:border-2 hover:border-black cursor-pointer duration-100"/>
+          </div>
+        </div>
+
+        
+        <motion.div
+          initial={{ opacity: 0, x: '100%' }}  
+          animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? '0%' : '100%' }} 
+          exit={{ opacity: 0, x: '100%' }}  
+          transition={{ duration: 0.5, ease: 'easeInOut' }} 
+          className={`${isMobileMenuOpen ? "block" : "hidden"
+          } md:hidden bg-black text-center text-white font-amiri uppercase space-y-4 pt-4 pb-6`}
+        >
+          {links.map((link, i) => (
+            <Link key={i} href={link.url} className="block px-4 py-2">
+              {link.link}
+            </Link>
+          ))}
+        </motion.div>
+      </nav>
+    </header>
+  );
+}
+

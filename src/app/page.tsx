@@ -32,7 +32,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div data-scroll-container>
+    <div data-scroll-container className="bg-black text-white">
      <Hero/>
       <About />
       <Experience />
@@ -44,7 +44,7 @@ const Home = () => {
         style={{
           scaleY,
         }}
-        className="fixed h-full w-[8px] bg-[#000] origin-top top-0 right-0 left-[99.70%] rounded-full"
+        className="fixed h-full w-[8px] bg-white origin-top top-0 right-0 left-[99.80%] rounded-full"
       />
     </div>
   );
