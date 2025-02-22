@@ -9,15 +9,33 @@ import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import {motion} from "framer-motion";
 import { FadeUp } from "./Animation";
+import { GoProjectSymlink } from "react-icons/go";
 
 const Projects = () => {
   return (
     <div className="px-20 max-lg:px-10 py-20">
-      <div className="text">
+      <div className="flex justify-center">
+        <button className="cursor-pointer bg-gradient-to-b bg shadow-[0px_4px_32px_0_rgba(47,47,47)] px-4 py-2 rounded-xl border border-[#5f5f5f] text-white font-medium group">
+          <div className="relative overflow-hidden">
+            <p className="group-hover:-translate-y-7 flex items-center gap-1 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+            Our Projects <GoProjectSymlink className="pt-1" />
+            </p>
+            <p className="absolute top-7 left-0 flex items-center gap-1 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+              Our Projects <GoProjectSymlink className="pt-1" />
+            </p>
+          </div>
+        </button>
+      </div>
+      <div className="text mt-5">
         <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }}
           className="cursor-pointer hover:text-[#FA472A] text-[40px] font-amiri flex justify-center"
         >
-          @brunoerdison
+         Recent Projects
+        </motion.h1>
+        <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }}
+          className="cursor-pointer hover:text-[#FA472A] text-[40px] font-amiri flex justify-center"
+        >
+         Take a look at some of out latest projects.
         </motion.h1>
         <motion.div variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }} className="cards images flex max-lg:flex-col gap-3 justify-between my-20">
           <div className="card relative group w-[19%] max-lg:w-full">

@@ -75,7 +75,7 @@ const Hero = () => {
         <div className="dots-container">
           <div className="dot"></div>
         </div>
-        <button className="pt-1">Hurry! Only Few Sports Left</button>
+        <button className="pt-1">Hurry! Only Few Spots Left</button>
       </div>
       <motion.div
         ref={sectionRef}
@@ -154,13 +154,13 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex w-full justify-center items-center gap-5 mt-10">
-      <div className="border-b border-dashed w-[200px]"></div>
+      <div className="border-b border-dashed w-[250px]"></div>
         <div className="stars flex gap-3">
           <MdStarBorder />
           <MdOutlineStarPurple500 className="text-xl" />
           <MdStarBorder />
         </div>
-        <div className="border-b border-dashed w-[200px]"></div>
+        <div className="border-b border-dashed w-[250px]"></div>
       </div>
     </main>
   );

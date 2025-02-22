@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from "react";
 import { useScroll, useSpring,motion } from "framer-motion"; 
-import About from "./_components/About";
 import Experience from "./_components/Experience";
 import Slider from "./_components/Slider";
 import Testimonial from "./_components/Testimonial";
@@ -10,6 +9,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Contact from "./_components/Contact";
 import Hero from "./_components/Hero";
+import Howitworks from "./_components/Howitworks";
 
 
 
@@ -34,11 +34,11 @@ const Home = () => {
   return (
     <div data-scroll-container className="bg-black text-white">
      <Hero/>
-      <About />
+     <Projects />
+     <Howitworks/>
       <Experience />
       <Slider />
       <Testimonial />
-      <Projects />
       <Contact/>
       <motion.div
         style={{

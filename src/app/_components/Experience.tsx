@@ -1,22 +1,65 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExperienceContent from "./ExperienceContent";
 import Location from "./Location";
-import MyProjects from "./MyProjects";
-
+import About from "./About";
 
 const Experience = () => {
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  useEffect(() => {
+    const mouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+  const variants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+    },
+    text: {
+      height: 100,
+      width: 100,
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75,
+      backgroundColor: "#fff",
+      color: "#000",
+      mixBlendMode: "difference" as const,
+    },
+  };
   const [activeContent, setActiveContent] = useState<number>(0);
 
   const handleButtonClick = (id: number) => {
     setActiveContent(id);
   };
-
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <div className="px-20 py-10 max-lg:px-10">
+      <motion.div
+        className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
+        variants={variants}
+        animate={cursorVariant}
+      ></motion.div>
       <div className="text">
         <motion.h1
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
           initial="hidden"
           whileInView="visible"
           viewport={{
@@ -26,35 +69,24 @@ const Experience = () => {
           }}
           className="font-amiri text-[60px] max-md:text-[48px] text-center"
         >
-          Education & Experience
+          About & Experience
         </motion.h1>
-       
       </div>
 
       {/* Buttons Section */}
       <div className="buttons flex justify-center gap-3 text-center mt-10">
         <button
           onClick={() => handleButtonClick(1)}
-          className="relative inline-block px-6 py-3 bg-white text-black font-poppins font-medium text-lg uppercase border border-black rounded-2xl overflow-hidden group transform transition-all duration-300 ease-in-out hover:scale-110 active:scale-95 shadow-lg group-hover:shadow-xl group-hover:shadow-black"
+          className="text-zinc-700 hover:text-zinc-200 backdrop-blur-lg bg-gradient-to-tr text-lg shadow-[0px_4px_32px_0_rgba(47,47,47)] font-poppins from-transparent via-[rgba(201,142,142,0.16)] to-transparent rounded-md py-2 px-6 hover:shadow-zinc-700 duration-700 border border-[#292929]"
         >
-          <span className="absolute inset-0 w-full h-full bg-black scale-x-0 scale-y-0 transition-all duration-300 group-hover:scale-x-100 group-hover:scale-y-100 origin-center"></span>
-          <span className="relative z-10 transition-all duration-300 group-hover:text-white group-hover:shadow-xl group-hover:shadow-black group-hover:scale-110">
-            Projects
-          </span>
-          <span className="absolute inset-0 w-full h-full bg-gradient-to-tr from-black to-gray-600 opacity-20 group-hover:opacity-0 transition-all duration-300"></span>
-          <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-gray-200 to-gray-500 opacity-10 group-hover:opacity-30 transition-all duration-300"></span>
+          About
         </button>
         <div className="button2">
           <button
             onClick={() => handleButtonClick(2)}
-            className="relative inline-block px-6 py-3 bg-white text-black font-poppins font-medium text-lg uppercase border border-black rounded-2xl overflow-hidden group transform transition-all duration-300 ease-in-out hover:scale-110 active:scale-95 shadow-lg group-hover:shadow-xl group-hover:shadow-black"
+            className="text-zinc-700 hover:text-zinc-200 backdrop-blur-lg bg-gradient-to-tr text-lg shadow-[0px_4px_32px_0_rgba(47,47,47)] font-poppins from-transparent via-[rgba(201,142,142,0.16)] to-transparent rounded-md py-2 px-6 hover:shadow-zinc-700 duration-700 border border-[#292929]"
           >
-            <span className="absolute inset-0 w-full h-full bg-black scale-x-0 scale-y-0 transition-all duration-300 group-hover:scale-x-100 group-hover:scale-y-100 origin-center"></span>
-            <span className="relative z-10 transition-all duration-300 group-hover:text-white group-hover:shadow-xl group-hover:shadow-black group-hover:scale-110">
-              location
-            </span>
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-tr from-black to-gray-600 opacity-20 group-hover:opacity-0 transition-all duration-300"></span>
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-b from-gray-200 to-gray-500 opacity-10 group-hover:opacity-30 transition-all duration-300"></span>
+            Location
           </button>
         </div>
       </div>
@@ -75,9 +107,8 @@ const Experience = () => {
               }}
               className="font-amiri text-[32px] font-[400]"
             >
-             <MyProjects/>
+              <About />
             </motion.h1>
-           
           </div>
         )}
 
@@ -93,9 +124,8 @@ const Experience = () => {
               }}
               className="font-amiri text-[32px] font-[400]"
             >
-              <Location/>
+              <Location />
             </motion.h1>
-            
           </div>
         )}
       </div>
