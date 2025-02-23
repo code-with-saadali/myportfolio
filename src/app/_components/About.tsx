@@ -11,7 +11,7 @@ import {
 
 const About = () => {
   return (
-    <div className="px-20 max-lg:px-10">
+    <div className="px-20 max-lg:px-5">
       <main>
         <div className="flex justify-between max-lg:flex-col">
           <div className="row1">

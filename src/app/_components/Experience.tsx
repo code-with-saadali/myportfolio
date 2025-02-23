@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ExperienceContent from "./ExperienceContent";
 import Location from "./Location";
 import About from "./About";
+import { FaArrowRight } from "react-icons/fa";
 
 const Experience = () => {
   const [mousePosition, setMousePosition] = useState({
@@ -77,17 +78,25 @@ const Experience = () => {
       <div className="buttons flex justify-center gap-3 text-center mt-10">
         <button
           onClick={() => handleButtonClick(1)}
-          className="text-zinc-700 hover:text-zinc-200 backdrop-blur-lg bg-gradient-to-tr text-lg shadow-[0px_4px_32px_0_rgba(47,47,47)] font-poppins from-transparent via-[rgba(201,142,142,0.16)] to-transparent rounded-md py-2 px-6 hover:shadow-zinc-700 duration-700 border border-[#292929]"
+          className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group"
         >
-          About
+          <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
+          <div className="flex justify-center items-center gap-3">
+            <h1 className="font-amiri z-50">About</h1>
+            <FaArrowRight className="group-hover:translate-x-2 duration-500" />
+          </div>
         </button>
         <div className="button2">
-          <button
-            onClick={() => handleButtonClick(2)}
-            className="text-zinc-700 hover:text-zinc-200 backdrop-blur-lg bg-gradient-to-tr text-lg shadow-[0px_4px_32px_0_rgba(47,47,47)] font-poppins from-transparent via-[rgba(201,142,142,0.16)] to-transparent rounded-md py-2 px-6 hover:shadow-zinc-700 duration-700 border border-[#292929]"
-          >
-            Location
-          </button>
+        <button
+          onClick={() => handleButtonClick(1)}
+          className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group"
+        >
+          <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
+          <div className="flex justify-center items-center gap-3">
+            <h1 className="font-amiri z-50">Location</h1>
+            <FaArrowRight className="group-hover:translate-x-2 duration-500" />
+          </div>
+        </button>
         </div>
       </div>
 

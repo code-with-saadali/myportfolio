@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const links = [
-    { link: "Home", url: "/home" },
+    { link: "Home", url: "/" },
     { link: "About", url: "/about" },
     { link: "Services", url: "/services" },
     { link: "Faqs", url: "/faqs" },

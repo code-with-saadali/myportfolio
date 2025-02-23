@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import { FadeUp } from "./Animation";
+import { useEffect, useState } from "react";
 
 
 interface Project {
@@ -55,10 +56,55 @@ const projects: Project[] = [
 ];
 
 const Slider: React.FC = () => {
+   const [mousePosition, setMousePosition] = useState({
+      x: 0,
+      y: 0,
+    });
+  
+    const [cursorVariant, setCursorVariant] = useState("default");
+  
+    useEffect(() => {
+      const mouseMove = (e: MouseEvent) => {
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      };
+  
+      window.addEventListener("mousemove", mouseMove);
+  
+      return () => {
+        window.removeEventListener("mousemove", mouseMove);
+      };
+    }, []);
+    const variants = {
+      default: {
+        x: mousePosition.x - 16,
+        y: mousePosition.y - 16,
+      },
+      text: {
+        height: 100,
+        width: 100,
+        x: mousePosition.x - 75,
+        y: mousePosition.y - 75,
+        backgroundColor: "#fff",
+        color: "#000",
+        mixBlendMode: "difference" as const,
+      },
+    };
+  
+    const textEnter = () => setCursorVariant("text");
+    const textLeave = () => setCursorVariant("default");
   return (
     <div className="px-6 sm:px-12 lg:px-20 py-10">
+      <motion.div
+        className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
+        variants={variants}
+        animate={cursorVariant}
+      ></motion.div>
       <div className="text">
-        <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }}  className="text-4xl sm:text-5xl lg:text-6xl font-amiri text-center pb-10 sm:pb-16 lg:pb-28">
+        <motion.h1  onMouseEnter={textEnter}
+          onMouseLeave={textLeave} variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }}  className="text-4xl sm:text-5xl lg:text-6xl font-amiri text-center pb-10 sm:pb-16 lg:pb-28">
           My Latest Projects
         </motion.h1>
       </div>
