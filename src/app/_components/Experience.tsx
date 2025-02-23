@@ -51,7 +51,7 @@ const Experience = () => {
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
   return (
-    <div className="px-20 py-10 max-lg:px-10">
+    <div className="px-20 py-10 max-lg:px-5">
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
         variants={variants}

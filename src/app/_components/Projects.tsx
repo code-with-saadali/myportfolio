@@ -13,7 +13,7 @@ import { GoProjectSymlink } from "react-icons/go";
 
 const Projects = () => {
   return (
-    <div className="px-20 max-lg:px-10 py-20">
+    <div className="px-20 max-lg:px-5 py-20">
       <div className="flex justify-center">
         <button className="cursor-pointer bg-gradient-to-b bg shadow-[0px_4px_32px_0_rgba(47,47,47)] px-4 py-2 rounded-xl border border-[#5f5f5f] text-white font-medium group">
           <div className="relative overflow-hidden">

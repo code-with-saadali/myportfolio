@@ -96,7 +96,7 @@ const Slider: React.FC = () => {
     const textEnter = () => setCursorVariant("text");
     const textLeave = () => setCursorVariant("default");
   return (
-    <div className="px-6 sm:px-12 lg:px-20 py-10">
+    <div className="px-20 max-lg:px-5 py-10">
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
         variants={variants}

@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className='bg-black text-white px-20'>
+    <div className='bg-black text-white px-20 max-lg:px-5'>
       {/* Divider Line */}
       <motion.div
         variants={FadeUp(0.1)}

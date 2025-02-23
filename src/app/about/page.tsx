@@ -70,7 +70,7 @@ const Page = () => {
         backgroundImage: `url(${starsBg.src})`,
         backgroundPositionY,
       }}
-      className="px-20 py-40 bg-black text-white"
+      className="px-20 py-40 bg-black text-white max-lg:px-5"
     >
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
@@ -87,7 +87,7 @@ const Page = () => {
         <h1
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
-          className="text-6xl text-center font-poppins leading-tight font-medium py-7"
+          className="text-6xl max-md:text-4xl text-center font-poppins leading-tight font-medium py-7"
         >
           Learn More About Landin <br />
           Let’s Deep Dive!

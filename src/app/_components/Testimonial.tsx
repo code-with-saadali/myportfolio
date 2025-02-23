@@ -62,7 +62,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="px-36 max-lg:px-10 py-20">
+    <div className="px-36 max-lg:px-5 py-20">
       <Swiper
         spaceBetween={30}
         slidesPerView={1}

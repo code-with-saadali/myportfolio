@@ -50,7 +50,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
       backgroundImage: `url(${starsBg.src})`,
       backgroundPositionY,
     }}
-      className="w-full h-full px-20 text-[#E6E6E6] flex font-sans max-lg:flex-col py-28 border-b-2 border-[#1b1b1b] max-xl:px-5 max-lg:py-5 max-sm:text-center relative overflow-hidden"
+      className="w-full h-full px-20 text-[#E6E6E6] flex font-sans max-lg:flex-col py-28 border-b-2 border-[#1b1b1b] max-lg:px-5 max-lg:py-5 max-sm:text-center relative overflow-hidden"
     >
       <div className="w-full mt-20">
         <div className="w-full">

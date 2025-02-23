@@ -73,7 +73,7 @@ const Howitworks = () => {
         backgroundImage: `url(${starsBg.src})`,
         backgroundPositionY,
       }}
-      className="px-20 py-20"
+      className="px-20 py-20 max-lg:px-5"
     >
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
@@ -101,8 +101,8 @@ const Howitworks = () => {
           Our Simple 3- Step Process
         </h1>
       </div>
-      <div className="boxes flex gap-5 justify-center mt-16">
-        <div className="box1 p-2 bg-[#0C0C0F] w-[25%] rounded-xl shadow-2xl">
+      <div className="boxes flex max-lg:flex-col gap-5 justify-center mt-16">
+        <div className="box1 p-2 bg-[#0C0C0F] w-[25%] max-lg:w-full rounded-xl shadow-2xl">
           <CiCirclePlus className="text-6xl mx-auto my-5" />
           <h1 className="text-3xl font-poppins text-center font-medium">
             Subscribe
@@ -111,7 +111,7 @@ const Howitworks = () => {
             Select your plan that fits your needs and Subscribe it.
           </p>
         </div>
-        <div className="box2 p-2 bg-[#0C0C0F] w-[25%] rounded-xl shadow-2xl">
+        <div className="box2 p-2 bg-[#0C0C0F] w-[25%] rounded-xl max-lg:w-full shadow-2xl">
           <PiUsersThreeThin className="text-6xl mx-auto my-5" />
           <h1 className="text-3xl font-poppins text-center font-medium">
             Request
@@ -120,7 +120,7 @@ const Howitworks = () => {
             Request as many task as you like according to your plan.
           </p>
         </div>
-        <div className="box3 p-2 bg-[#0C0C0F] w-[25%] rounded-xl shadow-2xl">
+        <div className="box3 p-2 bg-[#0C0C0F] w-[25%] rounded-xl max-lg:w-full shadow-2xl">
           <BsFileArrowUp className="text-6xl mx-auto my-5" />
           <h1 className="text-3xl font-poppins text-center font-medium">
             Receive
