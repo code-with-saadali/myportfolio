@@ -88,7 +88,7 @@ const Page = () => {
         backgroundImage: `url(${starsBg.src})`,
         backgroundPositionY,
       }}
-      className="px-20 pt-40 bg-black text-white max-lg:px-5"
+      className="px-20 py-40 bg-black text-white max-lg:px-5 overflow-hidden"
     >
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
