@@ -1,14 +1,31 @@
 "use client";
 import starsBg from "../../../public/stars.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Video from "./_components/Video";
+import AboutPortfolio from "./_components/AboutPortfolio";
+import AboutPortfolio2 from "./_components/AboutPortfolio2";
+import LocomotiveScroll from "locomotive-scroll";
+import "locomotive-scroll/dist/locomotive-scroll.css";
 
-const Page = () => {  
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
+const Page = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 1000,
+    damping: 300,
+    restDelta: 0.1,
   });
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]") as HTMLElement,
+      smooth: true,
+    });
+
+    return () => scroll.destroy();
+  }, []);
+
+  const sectionRef = useRef(null);
 
   const backgroundPositionY = useTransform(
     scrollYProgress,
@@ -57,6 +74,7 @@ const Page = () => {
 
   return (
     <motion.div
+      data-scroll-container
       ref={sectionRef}
       animate={{
         backgroundPositionX: starsBg.width,
@@ -70,7 +88,7 @@ const Page = () => {
         backgroundImage: `url(${starsBg.src})`,
         backgroundPositionY,
       }}
-      className="px-20 py-40 bg-black text-white max-lg:px-5"
+      className="px-20 pt-40 bg-black text-white max-lg:px-5"
     >
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
@@ -111,8 +129,17 @@ const Page = () => {
           </span>
         </button>
       </div>
+      <Video />
+      <AboutPortfolio />
+      <AboutPortfolio2 />
+      <motion.div
+        style={{
+          scaleY,
+        }}
+        className="fixed h-full w-[8px] bg-white origin-top top-0 right-0 left-[99.80%] rounded-full"
+      />
     </motion.div>
   );
 };
 
-export default Page;  
+export default Page;

@@ -1,17 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 
-interface ExperienceContentProps {
-  activeContent: number;
-}
-
-const ExperienceContent = ({ activeContent }: ExperienceContentProps) => {
+const ExperienceContent = () => {
   return (
-    <div
-      className={`experience flex justify-between max-lg:flex-col ${
-        activeContent !== 0 ? "hidden" : ""
-      }`}
-    >
+    <div className="experience flex justify-between max-lg:flex-col">
       <div className="row1">
         <motion.h1
           initial="hidden"

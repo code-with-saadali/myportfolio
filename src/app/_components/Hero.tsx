@@ -97,7 +97,7 @@ const Hero = () => {
           onMouseLeave={textLeave}
           className="text-[80px] max-sm:text-[45px] font-[400] font-amiri text-center text-white"
         >
-          Full Stack Developer Based <br /> in Prodigi Studios.
+          Full Stack Developer Based <br /> at Prodigi Studios.
         </h1>
         <p className="font-amiri text-white/70 text-center mb-5">
           Get high-quality, customized designs whenever you need them. <br /> No

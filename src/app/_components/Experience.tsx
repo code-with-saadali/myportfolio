@@ -1,10 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import ExperienceContent from "./ExperienceContent";
-import Location from "./Location";
-import About from "./About";
 import { FaArrowRight } from "react-icons/fa";
+import ExperienceContent from "./ExperienceContent";
 
 const Experience = () => {
   const [mousePosition, setMousePosition] = useState({
@@ -43,13 +41,9 @@ const Experience = () => {
       mixBlendMode: "difference" as const,
     },
   };
-  const [activeContent, setActiveContent] = useState<number>(0);
-
-  const handleButtonClick = (id: number) => {
-    setActiveContent(id);
-  };
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
+  
   return (
     <div className="px-20 py-10 max-lg:px-5">
       <motion.div
@@ -76,10 +70,7 @@ const Experience = () => {
 
       {/* Buttons Section */}
       <div className="buttons flex justify-center gap-3 text-center mt-10">
-        <button
-          onClick={() => handleButtonClick(1)}
-          className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group"
-        >
+        <button className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group">
           <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
           <div className="flex justify-center items-center gap-3">
             <h1 className="font-amiri z-50">About</h1>
@@ -87,57 +78,17 @@ const Experience = () => {
           </div>
         </button>
         <div className="button2">
-        <button
-          onClick={() => handleButtonClick(1)}
-          className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group"
-        >
-          <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
-          <div className="flex justify-center items-center gap-3">
-            <h1 className="font-amiri z-50">Location</h1>
-            <FaArrowRight className="group-hover:translate-x-2 duration-500" />
-          </div>
-        </button>
+          <button className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group">
+            <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
+            <div className="flex justify-center items-center gap-3">
+              <h1 className="font-amiri z-50">Location</h1>
+              <FaArrowRight className="group-hover:translate-x-2 duration-500" />
+            </div>
+          </button>
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="content mt-10">
-        <ExperienceContent activeContent={activeContent} />
-
-        {activeContent === 1 && (
-          <div className="content-1">
-            <motion.h1
-              initial="hidden"
-              whileInView="visible"
-              viewport={{
-                once: false,
-                amount: "some",
-                margin: "0px 0px -40px 0px",
-              }}
-              className="font-amiri text-[32px] font-[400]"
-            >
-              <About />
-            </motion.h1>
-          </div>
-        )}
-
-        {activeContent === 2 && (
-          <div className="content-2">
-            <motion.h1
-              initial="hidden"
-              whileInView="visible"
-              viewport={{
-                once: false,
-                amount: "some",
-                margin: "0px 0px -40px 0px",
-              }}
-              className="font-amiri text-[32px] font-[400]"
-            >
-              <Location />
-            </motion.h1>
-          </div>
-        )}
-      </div>
+      <ExperienceContent />
 
       <motion.div
         initial="hidden"

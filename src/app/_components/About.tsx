@@ -41,7 +41,7 @@ const About = () => {
                   }}
                   className="font-amiri text-[24px] font-[400] leading-snug py-12"
                 >
-                  Work for money and design <br /> for love! I’m Bruno, an{" "}
+                  Work for money and design <br /> for love! I’m Bruno, an
                   <br />
                   UI/UX Interaction Designer <br /> based in Poland.
                 </motion.p>

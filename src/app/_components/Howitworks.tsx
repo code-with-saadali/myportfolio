@@ -8,6 +8,26 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import starsBg from "../../../public/stars.png";
 
 const Howitworks = () => {
+  const steps = [
+    {
+      id: 1,
+      icon: <CiCirclePlus className="text-6xl mx-auto my-5" />,
+      title: "Subscribe",
+      description: "Select your plan that fits your needs and Subscribe it.",
+    },
+    {
+      id: 2,
+      icon: <PiUsersThreeThin className="text-6xl mx-auto my-5" />,
+      title: "Request",
+      description: "Request as many tasks as you like according to your plan.",
+    },
+    {
+      id: 3,
+      icon: <BsFileArrowUp className="text-6xl mx-auto my-5" />,
+      title: "Receive",
+      description: "Receive your design and request revisions until satisfied.",
+    },
+  ];
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -101,34 +121,21 @@ const Howitworks = () => {
           Our Simple 3- Step Process
         </h1>
       </div>
-      <div className="boxes flex max-lg:flex-col gap-5 justify-center mt-16">
-        <div className="box1 p-2 bg-[#0C0C0F] w-[25%] max-lg:w-full rounded-xl shadow-2xl">
-          <CiCirclePlus className="text-6xl mx-auto my-5" />
-          <h1 className="text-3xl font-poppins text-center font-medium">
-            Subscribe
-          </h1>
-          <p className="text-xl text-center font-amiri py-5 pb-10">
-            Select your plan that fits your needs and Subscribe it.
-          </p>
-        </div>
-        <div className="box2 p-2 bg-[#0C0C0F] w-[25%] rounded-xl max-lg:w-full shadow-2xl">
-          <PiUsersThreeThin className="text-6xl mx-auto my-5" />
-          <h1 className="text-3xl font-poppins text-center font-medium">
-            Request
-          </h1>
-          <p className="text-xl text-center font-amiri py-5 pb-10">
-            Request as many task as you like according to your plan.
-          </p>
-        </div>
-        <div className="box3 p-2 bg-[#0C0C0F] w-[25%] rounded-xl max-lg:w-full shadow-2xl">
-          <BsFileArrowUp className="text-6xl mx-auto my-5" />
-          <h1 className="text-3xl font-poppins text-center font-medium">
-            Receive
-          </h1>
-          <p className="text-xl text-center font-amiri py-5 pb-10">
-            Receive your design and request revisions until satisfied.
-          </p>
-        </div>
+      <div className="boxes flex max-lg:flex-col gap-5 cursor-pointer justify-center mt-16">
+        {steps.map((step) => (
+          <div
+            key={step.id}
+            className="p-2 bg-[#0C0C0F] w-[25%] max-lg:w-full rounded-xl shadow-2xl transition-all duration-300 hover:shadow-[0px_0px_20px_4px_rgba(255,255,255,0.5)]"
+          >
+            {step.icon}
+            <h1 className="text-3xl font-poppins text-center font-medium">
+              {step.title}
+            </h1>
+            <p className="text-xl text-center font-amiri py-5 pb-10">
+              {step.description}
+            </p>
+          </div>
+        ))}
       </div>
     </motion.div>
   );
