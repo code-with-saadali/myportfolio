@@ -73,7 +73,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
               <div
                 className={`cursor-pointer flex items-center justify-between py-2 px-6 max-sm:rounded-3xl max-sm:px-2 bg-transparent rounded-full  ${
                   openIndex === index
-                    ? "border-[#a866ff] border-2"
+                    ? "border-[#3a3a3d] border-2"
                     : "border-2 border-[#1e1e21]"
                 }`}
                 onClick={() => toggleAnswer(index)}
@@ -83,7 +83,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
                 </h3>
                 <span className="text-xl bg-zinc-300 text-black flex justify-center items-center p-4 rounded-full max-sm:bg-transparent max-sm:text-white">
                   {openIndex === index ? (
-                    <FaAngleUp className="text-[#a866ff]" />
+                    <FaAngleUp className="text-[#3a3a3d]" />
                   ) : (
                     <FaAngleDown />
                   )}

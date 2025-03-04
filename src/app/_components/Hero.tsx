@@ -65,7 +65,7 @@ const Hero = () => {
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
   return (
-    <main className="px-20 h-screen py-40 max-md:py-28 max-lg:px-5">
+    <main className="px-20 h-screen max-lg:h-full py-40 max-md:py-28 max-lg:px-5">
       <motion.div
         className="h-8 w-8 text-white rounded-full fixed top-0 left-0 pointer-events-none max-lg:hidden"
         variants={variants}

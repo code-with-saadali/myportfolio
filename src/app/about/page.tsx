@@ -7,8 +7,32 @@ import AboutPortfolio from "./_components/AboutPortfolio";
 import AboutPortfolio2 from "./_components/AboutPortfolio2";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
+import Faqs from "../_components/Faq";
+import CallToAction from "../_components/CallToAction";
 
 const Page = () => {
+  const regularFaqData = [
+    {
+      id: 1,
+      title: 'Get in Touch',
+      text: "Need assistance or have inquiries about our services? Here are some frequently asked questions to help you before reaching out. We're always here to assist you",
+      question: 'How can I get in touch with your team?',
+      answer:
+        "You can reach us via our contact form, email, or phone. We're also available on social media for quick responses to your queries.",
+    },
+    {
+      id: 2,
+      question: 'Do you offer free consultations?',
+      answer:
+        "Yes! We provide a free initial consultation to understand your project requirements and recommend the best solutions for your business.",
+    },
+    {
+      id: 3,
+      question: 'How soon can I expect a response?',
+      answer:
+        'We aim to respond within 24 hours on business days. For faster assistance, you can call us directly during working hours.',
+    },
+  ];
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 1000,
@@ -132,6 +156,8 @@ const Page = () => {
       <Video />
       <AboutPortfolio />
       <AboutPortfolio2 />
+      <Faqs faqInformation={regularFaqData}/>
+      <CallToAction/>
       <motion.div
         style={{
           scaleY,

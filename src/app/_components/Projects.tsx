@@ -33,7 +33,7 @@ const Projects = () => {
          Recent Projects
         </motion.h1>
         <motion.h1 variants={FadeUp(0.1)} initial="hidden" whileInView="visible" viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px",  }}
-          className="cursor-pointer hover:text-[#FA472A] text-[40px] font-amiri flex justify-center"
+          className="cursor-pointer max-lg:text-center hover:text-[#FA472A] text-[40px] font-amiri flex justify-center"
         >
          Take a look at some of out latest projects.
         </motion.h1>
