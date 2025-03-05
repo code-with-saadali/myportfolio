@@ -65,7 +65,7 @@ export default function FaqPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div data-scroll-container className="min-h-screen bg-black text-white overflow-hidden">
       <Hero
         title="Frequently Asked Questions"
         subtitle="Find answers to common queries about our services"

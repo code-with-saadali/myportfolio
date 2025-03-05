@@ -26,7 +26,7 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div data-scroll-container className="min-h-screen bg-black text-white overflow-hidden">
       <ContactHero />
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">

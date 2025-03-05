@@ -1,16 +1,35 @@
-
-'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import Link from 'next/link';
+"use client";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import LocomotiveScroll from "locomotive-scroll";
+import "locomotive-scroll/dist/locomotive-scroll.css";
 
 const LocationPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '-50%']);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 1000,
+    damping: 300,
+    restDelta: 0.1,
+  });
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]") as HTMLElement,
+      smooth: true,
+    });
+
+    return () => scroll.destroy();
+  }, []);
 
   return (
-    <div className="py-40 bg-black text-white px-[8%] max-2xl:px-10 max-lg:px-5" ref={containerRef}>
+    <div
+      data-scroll-container
+      className="py-40 bg-black text-white px-[8%] max-2xl:px-10 max-lg:px-5"
+      ref={containerRef}
+    >
       {/* Location Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
@@ -42,7 +61,8 @@ const LocationPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          I work remotely but am always open to collaboration opportunities worldwide.
+          I work remotely but am always open to collaboration opportunities
+          worldwide.
         </motion.p>
 
         {/* Google Map Embed */}
@@ -54,7 +74,7 @@ const LocationPage = () => {
         >
           {/* Map Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b pointer-events-none" />
-          
+
           {/* Interactive Map */}
           <iframe
             className="w-full h-full"
@@ -79,10 +99,7 @@ const LocationPage = () => {
       </motion.section>
 
       {/* Floating Particles */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none"
-        style={{ y }}
-      >
+      <motion.div className="fixed inset-0 pointer-events-none" style={{ y }}>
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
@@ -99,11 +116,17 @@ const LocationPage = () => {
             transition={{
               duration: Math.random() * 4 + 4,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
           />
         ))}
       </motion.div>
+      <motion.div
+        style={{
+          scaleY,
+        }}
+        className="fixed h-full w-[8px] bg-white origin-top top-0 right-0 left-[99.80%] rounded-full"
+      ></motion.div>
     </div>
   );
 };
