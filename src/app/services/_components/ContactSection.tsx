@@ -1,4 +1,3 @@
-// components/ContactSection.tsx
 "use client";
 import { motion } from "framer-motion";
 import { SectionTitle } from "./SectionTitle";
@@ -6,7 +5,10 @@ import { FloatingParticles } from "./FloatingParticles";
 
 export const ContactSection = () => {
   return (
-    <section className="min-h-screen px-[8%] max-2xl:px-10 max-lg:px-5 py-32" data-section="3">
+    <section
+      className="min-h-screen px-[8%] max-2xl:px-10 max-lg:px-5 py-32"
+      data-section="3"
+    >
       <motion.div
         className="max-w-4xl mx-auto text-center relative z-10"
         initial={{ opacity: 0, y: 50 }}

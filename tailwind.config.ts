@@ -21,7 +21,7 @@ export default {
         amiri: ["Amiri", "serif"],
       },
       backdropBlur: {
-        'lg': '16px',
+        lg: "16px",
       },
     },
   },

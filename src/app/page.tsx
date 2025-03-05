@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import { useEffect } from "react";
-import { useScroll, useSpring,motion } from "framer-motion"; 
+import { useScroll, useSpring, motion } from "framer-motion";
 import Experience from "./_components/Experience";
 import Slider from "./_components/Slider";
 import Testimonial from "./_components/Testimonial";
@@ -12,32 +12,30 @@ import Hero from "./_components/Hero";
 import Howitworks from "./_components/Howitworks";
 import Faqs from "./_components/Faq";
 
-
-
 const Home = () => {
   const regularFaqData = [
     {
       id: 1,
-      title: 'Get in Touch',
+      title: "Get in Touch",
       text: "Need assistance or have inquiries about our services? Here are some frequently asked questions to help you before reaching out. We're always here to assist you",
-      question: 'How can I get in touch with your team?',
+      question: "How can I get in touch with your team?",
       answer:
         "You can reach us via our contact form, email, or phone. We're also available on social media for quick responses to your queries.",
     },
     {
       id: 2,
-      question: 'Do you offer free consultations?',
+      question: "Do you offer free consultations?",
       answer:
         "Yes! We provide a free initial consultation to understand your project requirements and recommend the best solutions for your business.",
     },
     {
       id: 3,
-      question: 'How soon can I expect a response?',
+      question: "How soon can I expect a response?",
       answer:
-        'We aim to respond within 24 hours on business days. For faster assistance, you can call us directly during working hours.',
+        "We aim to respond within 24 hours on business days. For faster assistance, you can call us directly during working hours.",
     },
   ];
-  const { scrollYProgress } = useScroll(); 
+  const { scrollYProgress } = useScroll();
 
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 1000,
@@ -50,20 +48,20 @@ const Home = () => {
       el: document.querySelector("[data-scroll-container]") as HTMLElement,
       smooth: true,
     });
-  
-    return () => scroll.destroy(); 
+
+    return () => scroll.destroy();
   }, []);
 
   return (
     <div data-scroll-container className="bg-black text-white">
-     <Hero/>
-     <Projects />
-     <Howitworks/>
+      <Hero />
+      <Projects />
+      <Howitworks />
       <Experience />
       <Slider />
       <Testimonial />
-      <Faqs faqInformation={regularFaqData}/>
-      <Contact/>
+      <Faqs faqInformation={regularFaqData} />
+      <Contact />
       <motion.div
         style={{
           scaleY,

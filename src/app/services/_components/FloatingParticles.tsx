@@ -1,13 +1,12 @@
-// components/FloatingParticles.tsx
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
 interface FloatingParticlesProps {
   count: number;
 }
 
 export const FloatingParticles = ({ count }: FloatingParticlesProps) => (
-  <motion.div 
+  <motion.div
     className="absolute inset-0 pointer-events-none overflow-hidden"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -28,7 +27,7 @@ export const FloatingParticles = ({ count }: FloatingParticlesProps) => (
         transition={{
           duration: Math.random() * 4 + 4,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       />
     ))}

@@ -1,6 +1,5 @@
-// components/SectionTitle.tsx
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
 interface SectionTitleProps {
   title: string;
@@ -8,9 +7,13 @@ interface SectionTitleProps {
   className?: string;
 }
 
-export const SectionTitle = ({ title, gradient = 'from-white to-gray-400', className = '' }: SectionTitleProps) => {
+export const SectionTitle = ({
+  title,
+  gradient = "from-white to-gray-400",
+  className = "",
+}: SectionTitleProps) => {
   return (
-    <motion.div 
+    <motion.div
       className={`relative ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -19,9 +22,9 @@ export const SectionTitle = ({ title, gradient = 'from-white to-gray-400', class
       {/* Main Title */}
       <motion.h2
         className={`text-5xl text-center md:text-7xl font-bold mb-4 bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}
-        initial={{ letterSpacing: '0.5em', opacity: 0 }}
-        whileInView={{ letterSpacing: '0.1em', opacity: 1 }}
-        transition={{ duration: 1.5, ease: 'easeOut' }}
+        initial={{ letterSpacing: "0.5em", opacity: 0 }}
+        whileInView={{ letterSpacing: "0.1em", opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
       >
         {title}
       </motion.h2>
@@ -35,7 +38,7 @@ export const SectionTitle = ({ title, gradient = 'from-white to-gray-400', class
       />
 
       {/* Floating Particles */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-0 right-0 h-1"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -57,8 +60,8 @@ export const SectionTitle = ({ title, gradient = 'from-white to-gray-400', class
             transition={{
               duration: Math.random() * 2 + 2,
               repeat: Infinity,
-              ease: 'easeInOut',
-              delay: i * 0.2
+              ease: "easeInOut",
+              delay: i * 0.2,
             }}
           />
         ))}

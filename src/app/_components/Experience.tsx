@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import ExperienceContent from "./ExperienceContent";
+import Link from "next/link";
 
 const Experience = () => {
   const [mousePosition, setMousePosition] = useState({
@@ -70,14 +71,17 @@ const Experience = () => {
 
       {/* Buttons Section */}
       <div className="buttons flex justify-center gap-3 text-center mt-10">
-        <button className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group">
+       <Link href="/aboutbutton">
+       <button className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group">
           <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
           <div className="flex justify-center items-center gap-3">
             <h1 className="font-amiri z-50">About</h1>
             <FaArrowRight className="group-hover:translate-x-2 duration-500" />
           </div>
         </button>
-        <div className="button2">
+       </Link>
+       <Link href="/location">
+       <div className="button2">
           <button className="w-32 h-12 relative overflow-hidden z-50 flex justify-center items-center gap-5 rounded-full text-lg text-white border cursor-pointer border-[#3b3b3b] hover:text-black backdrop-blur-lg bg-gradient-to-tr from-transparent to-transparent my-6 px-6 shadow-sm hover:shadow-white duration-700 max-sm:mt-16 group">
             <div className="absolute z-0 bottom-0 left-1/2 right-1/2 group-hover:w-1 group-hover:h-1 rounded-full group-hover:scale-[50] duration-500 bg-white"></div>
             <div className="flex justify-center items-center gap-3">
@@ -86,6 +90,7 @@ const Experience = () => {
             </div>
           </button>
         </div>
+       </Link>
       </div>
 
       <ExperienceContent />

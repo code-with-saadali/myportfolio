@@ -20,14 +20,14 @@ export default function Navbar() {
       <nav className="mx-auto px-20 max-lg:px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="logo">
-            <div className="logoname">
+            <Link href='/' className="logoname">
               <button className="button" data-text="Awesome">
                 <span className="actual-text">&nbsp;Saadali&nbsp;</span>
                 <span aria-hidden="true" className="hover-text">
                   &nbsp;saadali&nbsp;
                 </span>
               </button>
-            </div>
+            </Link>
           </div>
 
           <div className="hidden md:flex space-x-6 text-white">

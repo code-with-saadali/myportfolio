@@ -1,19 +1,18 @@
-// components/ContactForm.tsx
-'use client';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+"use client";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export const ContactForm = () => {
-  const [formData,] = useState({
-    name: '',
-    email: '',
-    message: ''
+  const [formData] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Add your submission logic here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   return (

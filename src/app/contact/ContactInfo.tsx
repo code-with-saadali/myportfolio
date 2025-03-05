@@ -1,7 +1,6 @@
-// components/ContactInfo.tsx
-'use client';
-import { motion } from 'framer-motion';
-import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+"use client";
+import { motion } from "framer-motion";
+import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 export const ContactInfo = () => {
   const contacts = [
@@ -9,19 +8,19 @@ export const ContactInfo = () => {
       icon: <FiMail className="text-2xl" />,
       title: "Email",
       info: "contact@example.com",
-      link: "mailto:contact@example.com"
+      link: "mailto:contact@example.com",
     },
     {
       icon: <FiMapPin className="text-2xl" />,
       title: "Location",
-      info: "New York, USA"
+      info: "Okara, Pakistan",
     },
     {
       icon: <FiPhone className="text-2xl" />,
       title: "Phone",
       info: "+1 234 567 890",
-      link: "tel:+1234567890"
-    }
+      link: "tel:+1234567890",
+    },
   ];
 
   return (
@@ -33,7 +32,7 @@ export const ContactInfo = () => {
       <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
         Contact Information
       </h2>
-      
+
       <div className="space-y-6">
         {contacts.map((contact, index) => (
           <motion.div
@@ -59,9 +58,7 @@ export const ContactInfo = () => {
                 <p className="text-white">{contact.info}</p>
               )}
             </div>
-            
           </motion.div>
-          
         ))}
       </div>
     </motion.div>

@@ -1,4 +1,3 @@
-// components/TechShowcase.tsx
 "use client";
 import { motion } from "framer-motion";
 import { technologies } from "./constants";
