@@ -11,6 +11,7 @@ import Contact from "./_components/Contact";
 import Hero from "./_components/Hero";
 import Howitworks from "./_components/Howitworks";
 import Faqs from "./_components/Faq";
+import Servicescards from "./_components/Servicescards";
 
 const Home = () => {
   const regularFaqData = [
@@ -60,6 +61,7 @@ const Home = () => {
       <Experience />
       <Slider />
       <Testimonial />
+      <Servicescards/>
       <Faqs faqInformation={regularFaqData} />
       <Contact />
       <motion.div

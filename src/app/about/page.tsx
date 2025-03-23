@@ -9,6 +9,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Faqs from "../_components/Faq";
 import CallToAction from "../_components/CallToAction";
+import Achievements from "./_components/Achievements";
 
 const Page = () => {
   const regularFaqData = [
@@ -156,6 +157,7 @@ const Page = () => {
       <Video />
       <AboutPortfolio />
       <AboutPortfolio2 />
+      <Achievements/>
       <Faqs faqInformation={regularFaqData}/>
       <CallToAction/>
       <motion.div

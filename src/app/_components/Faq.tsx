@@ -71,7 +71,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
           {faqInformation.map((faq, index) => (
             <div key={faq.id || index} className="mb-4">
               <div
-                className={`cursor-pointer flex items-center justify-between py-2 px-6 max-sm:rounded-3xl max-sm:px-2 bg-transparent rounded-full  ${
+                className={`cursor-pointer flex items-center justify-between px-4 py-2 max-sm:rounded-3xl max-sm:px-2 bg-transparent rounded-full  ${
                   openIndex === index
                     ? "border-[#3a3a3d] border-2"
                     : "border-2 border-[#1e1e21]"
@@ -81,7 +81,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
                 <h3 className="text-xl font-semibold max-sm:text-sm">
                   {faq.question}
                 </h3>
-                <span className="text-xl bg-zinc-300 text-black flex justify-center items-center p-4 rounded-full max-sm:bg-transparent max-sm:text-white">
+                <span className="text-xl bg-zinc-300 text-black flex justify-center items-center p-4 max-sm:p-2 rounded-full max-sm:bg-transparent max-sm:text-white">
                   {openIndex === index ? (
                     <FaAngleUp className="text-[#3a3a3d]" />
                   ) : (
