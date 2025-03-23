@@ -64,8 +64,8 @@ function Servicescards() {
                                     <h3 className='font-serif text-2xl mt-2 xl:text-5xl md:pt-5'>{project.title}</h3>
                                     <hr className='botder-t-2 border-white/50 mt-5' />
                                     <ul className='flex flex-col gap-2 mt-4'>
-                                      {project.results.map((result, index) => (
-                                        <li key={result.id || index} className='flex items-center gap-2 text-md text-white/50'>
+                                    {project.results.map((result: { title: string }, index: number) => (
+                                        <li key={index} className='flex items-center gap-2 text-md text-white/50'>
                                           <div className='w-5 h-5 border-2 border-white text-white flex justify-center items-center rounded-full'>
                                                 <span><FaCheck className='size-3' /></span>
                                             </div>
@@ -73,8 +73,6 @@ function Servicescards() {
                                            </li>
                                          ))}
                                     </ul>
-
-                                    
                                 </div>
                                 <div className='w-[476px] h-[376px] overflow-hidden object-cover border-2 border-white/50 max-sm:border-none rounded-3xl max-lg:w-[400px] max-lg:h-[400px] max-sm:w-[250px] max-sm:h-[250px]'>
                                     <Image width={500} height={500} src={project.image} alt={project.title} className='w-full h-full object-cover' />
