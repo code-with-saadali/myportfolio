@@ -14,6 +14,7 @@ export default function Navbar() {
     { link: "Faqs", url: "/faqs" },
     { link: "Contact me", url: "/contact" },
   ];
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <header className="bg-black fixed font-sans w-full top-0 left-0 z-[100]">
@@ -62,17 +63,15 @@ export default function Navbar() {
           </div>
         </div>
 
-        
         <motion.div
           initial={{ opacity: 0, x: '100%' }}  
           animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? '0%' : '100%' }} 
           exit={{ opacity: 0, x: '100%' }}  
           transition={{ duration: 0.5, ease: 'easeInOut' }} 
-          className={`${isMobileMenuOpen ? "block" : "hidden"
-          } md:hidden bg-black text-center text-white font-amiri uppercase space-y-4 pt-4 pb-6`}
+          className="md:hidden absolute top-20 left-0 bg-black text-center text-white font-amiri uppercase shadow-lg rounded-md z-50 p-4 transition-all duration-300 ease-in-out w-full"
         >
           {links.map((link, i) => (
-            <Link key={i} href={link.url} className="block px-4 py-2">
+            <Link onClick={closeMenu} key={i} href={link.url} className="block px-4 py-2">
               {link.link}
             </Link>
           ))}
@@ -81,4 +80,3 @@ export default function Navbar() {
     </header>
   );
 }
-

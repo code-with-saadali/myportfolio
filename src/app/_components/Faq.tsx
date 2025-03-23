@@ -54,7 +54,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
     >
       <div className="w-full mt-20">
         <div className="w-full">
-          <h3 className="text-5xl font-poppins tracking-tight">
+          <h3 className="text-5xl font-poppins tracking-tight max-sm:text-4xl">
             Your Questions
             <span className="font-poppins text-[#898989]">Answered</span>
           </h3>
@@ -78,7 +78,7 @@ const Faq = ({ faqInformation }: FaqsProps) => {
                 }`}
                 onClick={() => toggleAnswer(index)}
               >
-                <h3 className="text-xl font-semibold max-sm:text-base">
+                <h3 className="text-xl font-semibold max-sm:text-sm">
                   {faq.question}
                 </h3>
                 <span className="text-xl bg-zinc-300 text-black flex justify-center items-center p-4 rounded-full max-sm:bg-transparent max-sm:text-white">

@@ -66,7 +66,7 @@ const Home = () => {
         style={{
           scaleY,
         }}
-        className="fixed h-full w-[8px] bg-white origin-top top-0 right-0 left-[99.80%] rounded-full"
+        className="fixed h-full w-[8px] bg-white origin-top top-0 right-0 left-[99.80%] rounded-full z-[150]"
       />
     </div>
   );
