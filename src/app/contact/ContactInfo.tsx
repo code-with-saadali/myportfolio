@@ -29,7 +29,7 @@ export const ContactInfo = () => {
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
     >
-      <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+      <h2 className="text-3xl font-bold mb-8 text-white bg-clip-text text-transparent">
         Contact Information
       </h2>
 

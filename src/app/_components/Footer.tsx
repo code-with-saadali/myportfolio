@@ -65,7 +65,7 @@ const Footer = () => {
             viewport={{ once: false, amount: "some", margin: "0px 0px -40px 0px" }}
             className="text-white/70 text-sm flex gap-6 flex-wrap justify-center lg:justify-start"
           >
-            <Link href="/portfolio" className="hover:text-white transition-colors duration-300">My Portfolio</Link>
+            <Link href="/" className="hover:text-white transition-colors duration-300">My Portfolio</Link>
             <Link href="/services" className="hover:text-white transition-colors duration-300">Services</Link>
             <Link href="/about" className="hover:text-white transition-colors duration-300">About Me</Link>
             <Link href="/contact" className="hover:text-white transition-colors duration-300">Contact</Link>

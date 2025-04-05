@@ -50,7 +50,7 @@ export const Hero = () => {
           transition={{ delay: 1 }}
         >
           <motion.button
-            className="px-8 py-4 md:px-10 md:py-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold hover:shadow-2xl hover:shadow-cyan-400/30 transition-all text-sm md:text-base"
+            className="cursor-pointer bg-gradient-to-b bg shadow-[0px_4px_32px_0_rgba(47,47,47)] px-8 py-2 rounded-[99px] border border-[#5f5f5f] text-white font-medium group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -58,7 +58,7 @@ export const Hero = () => {
           </motion.button>
 
           <motion.button
-            className="px-8 py-4 md:px-10 md:py-5 rounded-full border-2 border-white/20 bg-white/5 backdrop-blur-sm hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all text-sm md:text-base"
+            className="cursor-pointer bg-gradient-to-b bg shadow-[0px_4px_32px_0_rgba(47,47,47)] px-8 py-4 md:py-5 rounded-[99px] border border-[#5f5f5f] text-white font-medium group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

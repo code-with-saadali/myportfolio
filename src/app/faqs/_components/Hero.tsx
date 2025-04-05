@@ -15,7 +15,7 @@ export const Hero = ({ title, subtitle }: HeroProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white bg-clip-text text-transparent">
             {title}
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">{subtitle}</p>

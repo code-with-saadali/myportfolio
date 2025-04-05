@@ -56,7 +56,7 @@ export const ContactForm = () => {
         </div>
 
         <motion.button
-          className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 py-4 rounded-lg font-semibold hover:shadow-2xl hover:shadow-cyan-400/20 transition-all"
+          className="w-full cursor-pointer bg-gradient-to-b bg hover:shadow-[0px_4px_32px_0_rgba(47,47,47)] px-8 py-4 rounded-xl border border-[#5f5f5f] text-white font-medium group"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >

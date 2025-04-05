@@ -33,7 +33,7 @@ export const ContactSection = () => {
 
         <SectionTitle
           title="Let's Build Tomorrow"
-          gradient="from-cyan-400 to-blue-500"
+          gradient="text-white"
         />
 
         <motion.p
@@ -78,7 +78,7 @@ export const ContactSection = () => {
           </motion.div>
 
           <motion.button
-            className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:shadow-cyan-400/20 transition-all"
+            className="w-full cursor-pointer bg-gradient-to-b bg hover:shadow-[0px_4px_32px_0_rgba(47,47,47)] px-8 py-4 rounded-xl border border-[#5f5f5f] text-white font-medium"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

@@ -13,7 +13,7 @@ export const TechShowcase = () => {
       <div className="relative z-10">
         <SectionTitle
           title="Core Technologies"
-          gradient="from-cyan-300 to-blue-400"
+          gradient="text-white"
         />
 
         <motion.div
